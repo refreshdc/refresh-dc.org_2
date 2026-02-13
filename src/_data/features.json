@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Bring Your Own Framework",
+    "description": "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
+    "icon": "briefcase"
+  },
+  {
+    "title": "100% Static HTML, No JS",
+    "description": "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
+    "icon": "window"
+  },
+  {
+    "title": "On-Demand Components",
+    "description": "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.",
+    "icon": "data"
+  },
+  {
+    "title": "Broad Integration",
+    "description": "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
+    "icon": "bot"
+  },
+  {
+    "title": "SEO Enabled",
+    "description": "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
+    "icon": "search"
+  },
+  {
+    "title": "Community",
+    "description": "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
+    "icon": "user"
+  }
+]

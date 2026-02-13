@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: Blog
+permalink: /blog/
+---
+
+{% from "components/sectionhead.njk" import sectionhead %}
+
+<section>
+  <div class="max-w-screen-xl mx-auto px-5">
+    {{ sectionhead("Our Blog", "We write about building startups and thoughts going on our mind.") }}
+
+    <main class="mt-16">
+      <ul class="grid gap-16 max-w-4xl mx-auto">
+        {% set publishedPosts = collections.blog | published | sortByDate %}
+        {% for post in publishedPosts %}
+          <li>
+            <a href="{{ post.url }}">
+              <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
+                <img
+                  src="{{ post.data.image.src }}"
+                  alt="{{ post.data.image.alt }}"
+                  width="800"
+                  height="600"
+                  loading="{{ 'eager' if loop.index <= 3 else 'lazy' }}"
+                  decoding="{{ 'sync' if loop.index <= 3 else 'async' }}"
+                  class="w-full rounded-md object-cover object-center bg-white"
+                />
+                <div>
+                  <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    {{ post.data.category }}
+                  </span>
+                  <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1">
+                    {{ post.data.title }}
+                  </h2>
+                  <div class="flex gap-2 mt-3">
+                    <span class="text-gray-400">{{ post.data.author }}</span>
+                    <span class="text-gray-400">&bull;</span>
+                    <time class="text-gray-400" datetime="{{ post.data.publishDate | isoDate }}">
+                      {{ post.data.publishDate | formatDate }}
+                    </time>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </main>
+  </div>
+</section>

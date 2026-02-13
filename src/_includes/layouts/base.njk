@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content="Eleventy" />
+
+    {% set pageTitle = title + " | " + site.name if title else site.name + " where creatives and technologists come together" %}
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ description or site.description }}" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="{{ site.twitter.creator }}" />
+    <meta name="twitter:site" content="{{ site.twitter.site }}" />
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body  >
+    {% include "components/navbar.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.njk" %}
+  </body>
+</html>

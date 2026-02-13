@@ -1,0 +1,23 @@
+{# Container macro - wraps content in a max-width container #}
+{% macro container(class="") %}
+<div class="max-w-screen-xl mx-auto px-5 {{ class }}">
+  {{ caller() }}
+</div>
+{% endmacro %}
+
+{# Section macro - full-width outer wrapper with contained inner content.
+   Use this when you need edge-to-edge backgrounds (colors, images, etc.)
+   with the content still constrained to max-width.
+
+   Parameters:
+   - bgClass: classes for the full-width outer wrapper (backgrounds, padding, etc.)
+   - containerClass: additional classes for the inner container
+   - id: optional id attribute for the section element
+#}
+{% macro section(bgClass="", containerClass="", id="") %}
+<section class="{{ bgClass }}" {% if id %}id="{{ id }}"{% endif %}>
+  <div class="max-w-screen-xl mx-auto px-5 {{ containerClass }}">
+    {{ caller() }}
+  </div>
+</section>
+{% endmacro %}

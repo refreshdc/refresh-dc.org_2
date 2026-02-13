@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Improve page speed */
+/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+img {
+  content-visibility: auto;
+}
+
+/* Contact form validation styles */
+.invalid-feedback,
+.empty-feedback {
+  display: none;
+}
+
+.was-validated :placeholder-shown:invalid ~ .empty-feedback {
+  display: block;
+}
+
+.was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+  display: block;
+}
+
+.is-invalid,
+.was-validated :invalid {
+  border-color: #dc3545;
+}
+
+/* Alpine.js cloak */
+[x-cloak] {
+  display: none !important;
+}

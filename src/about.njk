@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+title: About
+permalink: /about/
+---
+
+{% from "components/sectionhead.njk" import sectionhead %}
+
+<section>
+  <div class="max-w-screen-xl mx-auto px-5">
+    {{ sectionhead("About" ) }}
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+   <h2 class="font-bold text-3xl text-gray-800">
+        Our History
+      </h2>
+
+    <p class="text-lg leading-relaxed text-slate-500">Back in 2006, DC's creative community had a problem: there was no place for designers to simply meet up and share ideas. So Refresh DC was born, a space where designers could connect, learn from each other, and build something bigger than themselves. </p>
+    <p class="text-lg leading-relaxed text-slate-500">What started as informal meetups for designers quickly grew into something more. As the years went by, we realized creativity doesn't happen in silos. Developers, strategists, writers, entrepreneurs, everyone was showing up with ideas to share and problems to solve together. Our community evolved naturally, expanding beyond design to welcome anyone working at the intersection of creativity and technology. </p>
+    <p class="text-lg leading-relaxed text-slate-500">Nearly two decades later, we're still doing what we do best: bringing people together. 
+    Whether it's a thought-provoking talk, a hands-on workshop, or just good conversation over drinks,
+     Refresh DC remains a place where DC's creative and tech communities can discover new ideas, connect with peers, 
+     and, well, refresh.     </p>
+      <h2 class="font-bold text-3xl text-gray-800">
+        The Team
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We're a multi-cultural team from around the world! We come from diverse backgrounds, bringing different personalities, experiences and skills to the job. This is what makes our team so special.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {% set publishedTeam = collections.team | published | sortByDate %}
+      {% for member in publishedTeam %}
+        <div class="group">
+          <div class="w-full aspect-square">
+            <img
+              src="{{ member.data.avatar.src }}"
+              alt="{{ member.data.avatar.alt }}"
+              width="400"
+              height="400"
+              class="w-full rounded-md transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+            />
+          </div>
+          <div class="mt-4 text-center">
+            <h2 class="text-lg text-gray-800">{{ member.data.name }}</h2>
+            <h3 class="text-sm text-slate-500">{{ member.data.title }}</h3>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Pricing
+permalink: /pricing/
+---
+
+{% from "components/sectionhead.njk" import sectionhead %}
+{% from "components/pricing-card.njk" import pricingCard %}
+
+<section>
+  <div class="max-w-screen-xl mx-auto px-5">
+    {{ sectionhead("Pricing", "Simple & Predictable pricing. No Surprises.") }}
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {% for plan in pricing %}
+        {{ pricingCard(plan) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
