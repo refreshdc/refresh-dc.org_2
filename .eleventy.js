@@ -44,6 +44,12 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/team/*.md");
   });
 
+  // Return the first N items of an array
+  eleventyConfig.addFilter("head", (array, n) => {
+    if (!Array.isArray(array)) return [];
+    return array.slice(0, n);
+  });
+
   // Get current year for copyright
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
