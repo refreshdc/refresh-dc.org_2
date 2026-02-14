@@ -4,14 +4,62 @@
   <div class="max-w-screen-xl mx-auto px-5">
     <div class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
       <div class="py-6 md:order-1 hidden md:block">
+        {% if heroCarousel.enabled and heroCarousel.photos.length > 0 %}
+        {% set count = heroCarousel.photos.length %}
+        {% set offset = 25 %}
+        {% set imgW = 480 %}
+        {% set imgH = 360 %}
+        <div id="hero-slideshow" style="position:relative;width:{{ imgW + (count - 1) * offset }}px;height:{{ imgH + (count - 1) * offset }}px;">
+          {% for photo in heroCarousel.photos %}
+          {% set i = loop.index0 %}
+          <img
+            src="{{ photo.src }}"
+            alt="{{ photo.alt }}"
+            loading="{% if loop.first %}eager{% else %}lazy{% endif %}"
+            width="{{ imgW }}"
+            height="{{ imgH }}"
+            class="hero-slide object-cover"
+            style="position:absolute;width:{{ imgW }}px;height:{{ imgH }}px;bottom:{{ i * offset }}px;left:{{ i * offset }}px;z-index:{{ count - i }};border:6px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all 0.6s ease;"
+            data-index="{{ i }}"
+          />
+          {% endfor %}
+        </div>
+        <script>
+          (function () {
+            var slides = document.querySelectorAll('.hero-slide');
+            var count = slides.length;
+            if (count <= 1) return;
+            var interval = {{ heroCarousel.interval | default(30000) }};
+            var offset = {{ offset }};
+            var order = [];
+            for (var i = 0; i < count; i++) order.push(i);
+
+            function applyPositions() {
+              for (var j = 0; j < count; j++) {
+                var slide = slides[order[j]];
+                slide.style.zIndex = count - j;
+                slide.style.bottom = (j * offset) + 'px';
+                slide.style.left = (j * offset) + 'px';
+              }
+            }
+
+            setInterval(function () {
+              var front = order.shift();
+              order.push(front);
+              applyPositions();
+            }, interval);
+          })();
+        </script>
+        {% else %}
         <img
           src="/assets/images/hero.png"
-          alt="Astronaut in the air"
+          alt="Refresh DC"
           loading="eager"
           width="620"
           height="620"
           class="w-full max-w-[620px]"
         />
+        {% endif %}
       </div>
       <div>
         <h1 class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
@@ -21,16 +69,6 @@
           Refresh DC is where creatives and technologists come together to share knowledge—and have a little fun along the way.
 
         </p>
-       <!--- <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="https://web3templates.com/templates/astroship-starter-website-template-for-astro" target="_blank" rel="noopener" class="flex gap-1 items-center justify-center bg-black text-white hover:bg-gray-800 border-2 border-transparent px-5 py-2.5 rounded text-center transition">
-            {% include "ui/icons/download.njk" %}
-            Download for Free
-          </a>
-          <a href="https://github.com/surjithctly/astroship" target="_blank" rel="noopener" class="flex gap-1 items-center justify-center bg-white border-2 border-black hover:bg-gray-100 text-black px-5 py-2.5 rounded text-center transition">
-            {% include "ui/icons/github.njk" %}
-            GitHub Repo
-          </a>
-        </div> --->
       </div>
     </div>
   </div>

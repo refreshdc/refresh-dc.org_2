@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "interval": 30000,
+  "photos": [
+    {
+      "src": "/assets/images/hero-slide-1.jpg",
+      "alt": "Refresh DC social event"
+    },
+    {
+      "src": "/assets/images/hero-slide-2.jpg",
+      "alt": "Refresh DC meetup presentation"
+    },
+    {
+      "src": "/assets/images/hero-slide-3.jpg",
+      "alt": "Refresh DC attendees"
+    }
+  ]
+}
