@@ -34,6 +34,15 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  // Sort by last name (alphabetical)
+  eleventyConfig.addFilter("sortByLastName", (members) => {
+    return [...members].sort((a, b) => {
+      const lastA = a.data.name.split(" ").pop().toLowerCase();
+      const lastB = b.data.name.split(" ").pop().toLowerCase();
+      return lastA.localeCompare(lastB);
+    });
+  });
+
   // Blog collection
   eleventyConfig.addCollection("blog", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/*.md");

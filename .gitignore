@@ -17,6 +17,10 @@ pnpm-debug.log*
 # macOS
 .DS_Store
 
+.claude/
+.firecrawl/
+
+
 # editor directories and files
 .vscode/*
 !.vscode/settings.json

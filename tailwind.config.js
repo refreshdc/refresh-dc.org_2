@@ -17,6 +17,7 @@ module.exports = {
       },
       colors: {
         'rf-blue': '#123456',
+        'rf-green': '#4CAF50',
         'rf-grey': "#ECECEC",
       },
     },

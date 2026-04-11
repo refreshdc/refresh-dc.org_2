@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "interval": 30000,
+  "interval": 10000,
   "photos": [
     {
       "src": "/assets/images/hero-slide-1.jpg",
