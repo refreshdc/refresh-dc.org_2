@@ -1,0 +1,154 @@
+{% if events.items.length > 0 %}
+<section class="py-16 lg:py-24">
+  <div class="max-w-screen-xl mx-auto px-5">
+    <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight  text-rf-blue mb-10">
+      {% if events.isPast %}Featured Events{% else %}Upcoming Events{% endif %}
+    </h2>
+
+    {# --- Desktop bento grid (hidden on mobile) --- #}
+    {% set eventList = events.items | head(3) %}
+    <div class="hidden md:grid md:grid-cols-2 gap-6" style="grid-template-rows: 1fr 1fr;">
+      {# Featured card — left column, spans both rows #}
+      {% if eventList.length > 0 %}
+      {% set feat = eventList[0] %}
+      <a href="{{ feat.url }}" target="_blank" rel="noopener noreferrer"
+         class="relative row-span-2 rounded-2xl overflow-hidden group flex flex-col justify-end">
+        {% if feat.image %}
+        <img src="{{ feat.image }}" alt="{{ feat.title }}"
+             class="absolute inset-0 w-full h-full object-cover blur-[5px] transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="relative z-10 p-6 lg:p-8">
+          <span class="inline-block bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+            Latest Event
+          </span>
+          <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">{{ feat.title }}</h3>
+          <p class="text-gray-200 text-sm mb-4 line-clamp-3">{{ feat.description }}</p>
+          <div class="flex flex-col gap-1 text-sm text-gray-300 mb-5">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>{{ feat.date }} &middot; {{ feat.time }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{{ feat.venue if feat.venue else feat.address }}</span>
+            </div>
+          </div>
+          <span class="inline-block bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors">
+            Learn More
+          </span>
+        </div>
+      </a>
+      {% endif %}
+
+      {# Right column — two smaller cards stacked #}
+      {% if eventList.length > 1 %}
+      {% set ev = eventList[1] %}
+      <a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer"
+         class="relative rounded-2xl overflow-hidden group flex flex-col justify-end">
+        {% if ev.image %}
+        <img src="{{ ev.image }}" alt="{{ ev.title }}"
+             class="absolute inset-0 w-full h-full object-cover blur-[5px] transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="relative z-10 p-5">
+          <h3 class="text-lg font-bold text-white mb-1">{{ ev.title }}</h3>
+          <p class="text-gray-200 text-xs mb-3 line-clamp-2">{{ ev.description }}</p>
+          <div class="flex flex-col gap-1 text-xs text-gray-300">
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>{{ ev.date }} &middot; {{ ev.time }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{{ ev.venue if ev.venue else ev.address }}</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endif %}
+
+      {% if eventList.length > 2 %}
+      {% set ev = eventList[2] %}
+      <a href="{{ ev.url }}" target="_blank" rel="noopener noreferrer"
+         class="relative rounded-2xl overflow-hidden group flex flex-col justify-end">
+        {% if ev.image %}
+        <img src="{{ ev.image }}" alt="{{ ev.title }}"
+             class="absolute inset-0 w-full h-full object-cover blur-[5px] transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        {% endif %}
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+        <div class="relative z-10 p-5">
+          <h3 class="text-lg font-bold text-white mb-1">{{ ev.title }}</h3>
+          <p class="text-gray-200 text-xs mb-3 line-clamp-2">{{ ev.description }}</p>
+          <div class="flex flex-col gap-1 text-xs text-gray-300">
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span>{{ ev.date }} &middot; {{ ev.time }}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>{{ ev.venue if ev.venue else ev.address }}</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endif %}
+    </div>
+
+    {# --- Mobile single-column stack (hidden on desktop) --- #}
+    <div class="flex flex-col gap-6 md:hidden">
+      {% for event in events.items | head(3) %}
+        <a href="{{ event.url }}" target="_blank" rel="noopener noreferrer"
+           class="relative rounded-2xl overflow-hidden group flex flex-col justify-end {% if loop.first %}min-h-[400px]{% else %}min-h-[260px]{% endif %}">
+          {% if event.image %}
+          <img src="{{ event.image }}" alt="{{ event.title }}"
+               class="absolute inset-0 w-full h-full object-cover blur-[5px]" loading="lazy" />
+          {% endif %}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          <div class="relative z-10 p-5">
+            {% if loop.first %}
+            <span class="inline-block bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
+              Latest Event
+            </span>
+            {% endif %}
+            <h3 class="text-xl font-bold text-white mb-1">{{ event.title }}</h3>
+            <p class="text-gray-200 text-sm mb-3 line-clamp-2">{{ event.description }}</p>
+            <div class="flex flex-col gap-1 text-sm text-gray-300 {% if loop.first %}mb-4{% endif %}">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <span>{{ event.date }} &middot; {{ event.time }}</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>{{ event.venue if event.venue else event.address }}</span>
+              </div>
+            </div>
+            {% if loop.first %}
+            <span class="inline-block bg-green-500 text-white text-sm font-semibold px-5 py-2 rounded-lg">
+              Learn More
+            </span>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
