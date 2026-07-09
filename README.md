@@ -1,166 +1,133 @@
-# Astroship - Astro SAAS Starter Website Template
+# Refresh DC
 
-Astroship is a free starter astro website template for saas, startups, marketing websites, landing pages & blogs. Built with Astro & TailwindCSS.
+Community website for [Refresh DC](https://refresh-dc.org), a Washington, DC-based creative and tech meetup group founded in 2006.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+## Tech Stack
 
-## Live Demo
+- **Static Site Generator:** [Eleventy (11ty)](https://www.11ty.dev/) v2
+- **Templating:** Nunjucks (`.njk`) for pages/layouts, Markdown for content
+- **CSS:** Tailwind CSS v3 with `@tailwindcss/typography`, processed via PostCSS
+- **Interactivity:** Alpine.js (CDN)
+- **Fonts:** Bricolage Grotesque + Inter (Google Fonts)
+- **Deployment:** Netlify
 
-**[https://astroship.web3templates.com/](https://astroship.web3templates.com/)**
+## Getting Started
 
-**[Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)**
+### Prerequisites
 
-## Upgrade to Astroship Pro Version
+- Node.js
+- npm
 
-**[https://astroship-pro.web3templates.com/](https://astroship-pro.web3templates.com/)**
-
-**[Purchase Astroship Pro — $49](https://web3templates.com/templates/astroship-pro-astro-saas-website-template)**
-
-
-<!-- prettier-ignore -->
-| Feature | Free Version | Pro Version |
-| --- | ------ | --- |
-| Astro v3 | ✅  | ✅ |
-| Content Collections | ✅  | ✅ |
-| Tailwind CSS   | ✅  | ✅ |
-| Mobile Responsive | ✅  | ✅ |
-| Working Contact Page | ✅  | ✅ |
-| Pro Layouts & Features | ❌  | ✅ |
-| Blog with Pagination | ❌ | ✅ |
-| View Transitions | ❌ | ✅ |
-| Advanced Homepage Design | ❌  | ✅ |
-| Features Page | ❌  | ✅ |
-| Integrations Page | ❌  | ✅ |
-| Elegant 404 Page | ❌  | ✅ |
-| 6 Months Support| ❌  | ✅  |
-| Free Updates    | ✅  | ✅  |
-| License         | GPL-2.0 | Commercial |
-| &nbsp; | &nbsp;| &nbsp;|
-| Pricing| Free|**$49**|
-| &nbsp; | [Deploy for free](https://vercel.com/new/surjithctly/clone?demo-description=Starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20blogs%20built%20with%20Astro%20and%20TailwindCSS.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5dB0dDqBr1BfvIoNOmffVB%2F784984a8d3fe5e3db123e7c655166046%2Fastroship_-_Tony_Sullivan.jpg&demo-title=Astroship&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&from=templates&project-name=Astroship&repository-name=astroship&repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&skippable-integrations=1) | [Purchase Pro](https://web3templates.com/templates/astroship-pro-astro-saas-website-template) |
-
-<a href="https://web3templates.com/templates/astroship-pro-astro-saas-website-template">
-<img width="160" alt="Upgrade to Pro" src="https://user-images.githubusercontent.com/1884712/199181300-37c2128e-d033-4145-a906-16fa5263a53b.png">
-</a>
-
-## Deploy this template
-
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-
-## Pro Version Preview
-
-![preview](https://github.com/surjithctly/astroship/assets/1884712/25665c02-d2a7-43dc-89b2-34a8ae37ade9)
-
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
-
-## Installation
-
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
-
-Alternatively, you can clone the project directly from this repo to your local system.
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
-```
-
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
-
-### 2. Install Dependencies
+### Install & Run
 
 ```bash
 npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
-```
-
-### 3. Start development Server
-
-```bash
 npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
 ```
 
-### Preview & Build
+The dev server runs Eleventy and Tailwind CSS in parallel via `npm-run-all`.
+
+### Build for Production
 
 ```bash
-npm run preview
 npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
 ```
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+Output is written to `_site/`.
 
-### Other Commands
+### Environment Variables
 
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
+Create a `.env` file in the project root:
+
 ```
+EVENTBRITE_API_TOKEN=your_token
+EVENTBRITE_ORG_ID=your_org_id
+POSTHOG_PROJECT_TOKEN=your_token
+POSTHOG_PROJECT_ID=your_id
+```
+
+| Variable | Purpose |
+|---|---|
+| `EVENTBRITE_API_TOKEN` | Fetches upcoming/past events from Eventbrite at build time |
+| `EVENTBRITE_ORG_ID` | Identifies the Refresh DC Eventbrite organization |
+| `POSTHOG_PROJECT_TOKEN` | Enables PostHog analytics (optional) |
+| `POSTHOG_PROJECT_ID` | PostHog project identifier (optional) |
 
 ## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```
-/
-├── public/
-│   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
+src/
+├── _data/              # Global data (site config, events API, nav, analytics)
+│   ├── site.json       # Site name, URL, description, social handles
+│   ├── navigation.json # Nav menu items
+│   ├── heroCarousel.json # Homepage photo carousel config
+│   ├── events.js       # Eventbrite API integration (dynamic data)
+│   └── posthog.js      # PostHog config from env vars
+├── _includes/
+│   ├── layouts/        # base.njk, blog.njk
+│   └── components/     # navbar, hero, events, newsletter, footer, etc.
+├── blog/               # Markdown blog posts
+├── team/               # Markdown team member profiles
+├── assets/             # CSS, images, SVG icons
+├── index.njk           # Homepage
+├── about.njk           # About page with team grid
+├── contact.njk         # Contact page
+├── conduct.njk         # Code of Conduct
+└── 404.njk             # Custom 404
+public/                 # Static passthrough files (logo, robots.txt)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Blog Posts
 
-## TailwindCSS
+Add Markdown files to `src/blog/` with frontmatter:
 
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
+```yaml
+---
+title: "Post Title"
+snippet: "Short description"
+image: { src: "/path/to/image.jpg", alt: "Alt text" }
+publishDate: "2024-01-15"
+category: "Category"
+author: "Author Name"
+tags: [tag1, tag2]
+draft: false
+---
+```
 
-## Credits
+Posts with `draft: true` or a future `publishDate` are excluded from the build.
 
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
+### Team Members
 
-## 👀 Want to learn more?
+Add Markdown files to `src/team/` with frontmatter:
 
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
+```yaml
+---
+name: "Member Name"
+title: "Role"
+avatar: { src: "/path/to/avatar.jpg", alt: "Alt text" }
+linkedin: "https://linkedin.com/in/username"
+publishDate: "2024-01-01"
+draft: false
+---
+```
 
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+## Integrations
+
+- **Eventbrite** — Events fetched at build time and displayed on the homepage
+- **Mailchimp** — Newsletter signup form
+- **PostHog** — Product analytics (loaded when env var is set)
+- **Web3Forms** — Contact form submissions
+
+## Brand
+
+Brand colors defined in `tailwind.config.js`:
+
+- `rf-blue`: #123456
+- `rf-green`: #4CAF50
+- `rf-grey`: #ECECEC
+
+## License
+
+Content is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
