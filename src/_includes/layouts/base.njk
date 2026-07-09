@@ -6,23 +6,61 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content="Eleventy" />
 
-    {% set pageTitle = title + " | " + site.name if title else site.name + " where creatives and technologists come together" %}
+    {% set pageTitle = title + " | " + site.name if title else "Refresh DC — DC's Creative & Tech Community Since 2006" %}
+    {% set pageDescription = description or site.description %}
     <title>{{ pageTitle }}</title>
-    <meta name="description" content="{{ description or site.description }}" />
+    <meta name="description" content="{{ pageDescription }}" />
+    <meta name="keywords" content="Refresh DC, DC creative community, Washington DC meetups, design community, tech community, creative technology, networking events, workshops, talks" />
+    <meta name="author" content="Refresh DC" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Social -->
+    <!-- Open Graph -->
     <meta property="og:title" content="{{ pageTitle }}" />
-    <meta property="og:description" content="{{ description or site.description }}" />
-    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />
+    <meta property="og:site_name" content="Refresh DC" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="{{ site.twitter.creator }}" />
     <meta name="twitter:site" content="{{ site.twitter.site }}" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ pageDescription }}" />
+    <meta name="twitter:image" content="{{ site.url }}{{ site.image }}" />
 
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Refresh DC",
+      "url": "https://refresh-dc.org/",
+      "logo": "https://refresh-dc.org/assets/images/refresh_dc_logo.png",
+      "description": "A Washington, DC community bringing together designers, developers, strategists, writers, and entrepreneurs at the intersection of creativity and technology since 2006.",
+      "foundingDate": "2006",
+      "areaServed": {
+        "@type": "City",
+        "name": "Washington, DC"
+      },
+      "knowsAbout": ["Design", "Technology", "Creative Strategy", "Web Development"],
+      "sameAs": [
+        "https://www.instagram.com/refreshdc",
+        "https://www.linkedin.com/company/refresh-dc",
+        "https://www.youtube.com/@refreshdc",
+        "https://x.com/refreshdc",
+        "https://www.eventbrite.com/o/refresh-dc-1039770801"
+      ],
+      "event": {
+        "@type": "EventSeries",
+        "name": "Refresh DC Meetups",
+        "description": "Talks, hands-on workshops, and networking events for DC's creative and tech communities."
+      }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

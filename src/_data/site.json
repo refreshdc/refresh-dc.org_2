@@ -1,10 +1,10 @@
 {
   "name": "Refresh DC",
-  "description": "Where creatives and technologists come together",
-  "url": "https://refreshdc.org",
-  "image": "/opengraph.jpg",
+  "description": "Refresh DC brings together designers, developers, strategists, and creatives in Washington, DC through talks, workshops, and meetups. Building community at the intersection of creativity and technology since 2006.",
+  "url": "https://refresh-dc.org",
+  "image": "/assets/images/refresh_dc_logo.png",
   "twitter": {
-    "creator": "@stanwilsonjr",
-    "site": "@web3templates"
+    "creator": "@refreshdc",
+    "site": "@refreshdc"
   }
 }
