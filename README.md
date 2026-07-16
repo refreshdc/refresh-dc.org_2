@@ -35,24 +35,6 @@ npm run build
 
 Output is written to `_site/`.
 
-### Environment Variables
-
-Create a `.env` file in the project root:
-
-```
-EVENTBRITE_API_TOKEN=your_token
-EVENTBRITE_ORG_ID=your_org_id
-POSTHOG_PROJECT_TOKEN=your_token
-POSTHOG_PROJECT_ID=your_id
-```
-
-| Variable | Purpose |
-|---|---|
-| `EVENTBRITE_API_TOKEN` | Fetches upcoming/past events from Eventbrite at build time |
-| `EVENTBRITE_ORG_ID` | Identifies the Refresh DC Eventbrite organization |
-| `POSTHOG_PROJECT_TOKEN` | Enables PostHog analytics (optional) |
-| `POSTHOG_PROJECT_ID` | PostHog project identifier (optional) |
-
 ## Project Structure
 
 ```
