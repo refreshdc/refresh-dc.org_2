@@ -1,5 +1,6 @@
 # Refresh DC
 
+
 Community website for [Refresh DC](https://refresh-dc.org), a Washington, DC-based creative and tech meetup group founded in 2006.
 
 ## Tech Stack
