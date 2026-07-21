@@ -1,8 +1,8 @@
 {
   "items": [
 
-    { "title": "About", "path": "/about/" } 
-   
+    { "title": "About", "path": "/about/" }, 
+    {  "title": "Community Survey", "path":"https://us10.list-manage.com/survey?u=09b9eff2e09e315510cf2c7e6&id=efd4a8a699&e=*%7CUNIQID%7C*"}   
   ]
 }
 

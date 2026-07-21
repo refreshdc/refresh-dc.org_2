@@ -2,7 +2,7 @@
 draft: false
 name: "Eden Tadesse"
 title: "Events"
-linkedin: "https://www.linkedin.com/in/nickwhitmoyer/"
+linkedin: "https://www.linkedin.com/in/edentadesse/"
 avatar: {
     src: "/assets/images/edent.png",
     alt: "Eden Tadesse"
