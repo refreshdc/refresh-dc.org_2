@@ -2,7 +2,7 @@
 draft: false
 name: "Rochelle Pennington"
 title: "Events"
-linkedin: "https://www.linkedin.com/in/nickwhitmoyer/"
+linkedin: "https://www.linkedin.com/in/rochellefp/"
 avatar: {
     src: "/assets/images/rp.jpeg",
     alt: "Rochelle Pennington"
