@@ -1,6 +1,6 @@
 module.exports = function(eleventyConfig) {
   // Copy static assets
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy({ "public": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets/images": "assets/images" });
 
   // Watch CSS for changes (Tailwind builds it separately)
